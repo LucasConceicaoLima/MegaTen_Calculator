@@ -1,0 +1,79 @@
+body{
+    background: url(../imagens/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Noto Sans JP', sans-serif;
+    text-align: center;
+    max-width: 1280;
+    max-height: 720;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline;
+    margin: 5px;
+    padding: 5px;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover{
+    background: #E8E8E8;
+    border-radius: 15px;
+    box-shadow: 0 0 0px 10px #E8E8E8;
+}
+
+article{
+    text-align: center;
+    width: 70%;
+    margin: 5px;
+    padding: 5px;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #E8E8E8;
+}
+textarea{
+    width: 70%;
+    margin: 5px;
+    padding: 5px;
+}
+
+form label{
+    width: 30%;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+form input, select{
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+header img{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    margin-left: 50px;
+}
+
+header nav, h1{
+    margin: 5px;
+    padding: 5px;
+}
