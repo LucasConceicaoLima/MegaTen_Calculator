@@ -180,6 +180,8 @@ var digiPoints = 0;
 var bethelPoints = 0;
 var experience = 0;
 var expertise = 0;
+var macca = 0;
+var magnetite = 0,
 var slashCap = 0;
 var chargeCap = 0;
 var bluntCap = 0;
@@ -223,6 +225,10 @@ var demonFinalCriticalCorrection = 0;
 var demonRush = 0;
 var demonSpin = 0;
 var demonRapid = 0;
+var demonFireBoost = 0;
+var demonIceBoost = 0;
+var demonElecBoost = 0;
+var demonForceBoost = 0;
 var demonSpinHPCost = 0;
 var demonSpinMPCost = 0;
 var demonExperience = 0;
@@ -233,6 +239,7 @@ var partyIntelligence = 0;
 var partySpeed = 0;
 var partyLuck = 0;
 var partyExperience = 0;
+var partyCloseRange = 0;
 
 var functionAux = 0;
 var coll = document.getElementsByClassName("collapsible");
@@ -454,6 +461,8 @@ function inicializar(){
     document.getElementById('bethelearned').value = bethelPoints;
     document.getElementById('experience').value = experience;
     document.getElementById('expertise').value = expertise;
+    document.getElementById('macca').value = macca;
+    document.getElementById('magnetite').value = magnetite;
     
     document.getElementById('demonstr').value = demonStrength;
     document.getElementById('demonmag').value = demonMagic;
@@ -486,6 +495,10 @@ function inicializar(){
     document.getElementById('demonspin').value = demonSpin;
     document.getElementById('demonrush').value = demonRush;
     document.getElementById('demonrapid').value = demonRapid;
+    document.getElementById('demonfireboost').value = demonFireBoost;
+    document.getElementById('demoniceboost').value = demonIceBoost;
+    document.getElementById('demonelecboost').value = demonElecBoost;
+    document.getElementById('demonforceboost').value = demonForceBoost;
     document.getElementById('demonspinhpcost').value = demonSpinHPCost;
     document.getElementById('demonspinmpcost').value = demonSpinMPCost;
     
@@ -496,6 +509,7 @@ function inicializar(){
     document.getElementById('partyspd').value = partySpeed;
     document.getElementById('partyluc').value = partyLuck;
     document.getElementById('partyxp').value = partyExperience;
+    document.getElementById('partyclsrng').value = partyCloseRange;
 }
     
 function setarPersonagem(){
@@ -1061,7 +1075,105 @@ function calcularTarot(elemento){
                 if(document.getElementById(elemento).value=="EXT: Nerve Device"){
                     document.getElementById('nerveboost').value = parseInt(document.getElementById('nerveboost').value) + 15;
                 }
-            }
+    
+                if(document.getElementById(elemento).value=="Luvah Crystal"){ 
+                    document.getElementById('demonforceboost').value = parseInt(document.getElementById('demonforceboost').value) + 2;
+                    document.getElementById('demonmaxhp').value = document.getElementById('demonmaxhp').value - 5;
+                }
+    
+                if(document.getElementById(elemento).value=="Urthona Crystal"){ 
+                    document.getElementById('demonelecboost').value = parseInt(document.getElementById('demonelecboost').value) + 2;
+                    document.getElementById('demonmaxhp').value = document.getElementById('demonmaxhp').value - 5;
+                }
+    
+                if(document.getElementById(elemento).value=="Urizen Crystal"){ 
+                    document.getElementById('demonfireboost').value = parseInt(document.getElementById('demonfireboost').value) + 2;
+                    document.getElementById('demonmaxhp').value = document.getElementById('demonmaxhp').value - 5;
+                }
+    
+                if(document.getElementById(elemento).value=="Tharmas Crystal"){ 
+                    document.getElementById('demoniceboost').value = parseInt(document.getElementById('demoniceboost').value) + 2;
+                    document.getElementById('demonmaxhp').value = document.getElementById('demonmaxhp').value - 5;
+                }
+    
+                if(document.getElementById(elemento).value=="Albion Crystal"){
+                    document.getElementById('maxhp').value = parseInt(document.getElementById('maxhp').value) + 5;
+                    document.getElementById('hpregen').value = parseInt(document.getElementById('hpregen').value) + 5;
+                    document.getElementById('closerangedamage').value = document.getElementById('closerangedamage').value) - 3;
+                    document.getElementById('longrangedamage').value = document.getElementById('longrangedamage').value) - 3;
+                    document.getElementById('spelldamage').value = document.getElementById('spelldamage').value) - 3;
+                    if(document.getElementById('level').value<80){
+                        document.getElementById('macca').value = parseInt(document.getElementById('macca').value) + 3;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Alilat Crystal"){
+                    document.getElementById('physicaldefense').value = parseInt(document.getElementById('physicaldefense').value) + 3;
+                    document.getElementById('magicaldefense').value = parseInt(document.getElementById('magicaldefense').value) + 3;
+                    document.getElementById('closerangedamage').value = document.getElementById('closerangedamage').value) - 3;
+                    document.getElementById('longrangedamage').value = document.getElementById('longrangedamage').value) - 3;
+                    document.getElementById('spelldamage').value = document.getElementById('spelldamage').value) - 3;
+                    if(document.getElementById('level').value<80){
+                        document.getElementById('magnetite').value = parseInt(document.getElementById('magnetite').value) + 3;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Black Maria Crystal"){
+                }
+                
+                if(document.getElementById(elemento).value=="Thoth Crystal"){
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 2;
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Indra Crystal"){
+                    document.getElementById('clsrng').value = parseInt(document.getElementById('clsrng').value) + 1;
+                    if(document.getElementById('align').value=="Law"){
+                        document.getElementById('hpcost').value = document.getElementById('hpcost').value - 2;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Odin Crystal"){
+                    document.getElementById('almightyboost').value = parseInt(document.getElementById('almightyboost').value) + 2;
+                }
+    
+                if(document.getElementById(elemento).value=="Atavaka Crystal"){
+                    document.getElementById('partyclsrng').value = parseInt(document.getElementById('partyclsrng').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Mithra Crystal"){
+                    document.getElementById('slashresist').value = parseInt(document.getElementById('slashresist').value) + 2;
+                    document.getElementById('chargeresist').value = parseInt(document.getElementById('schargeresist').value) + 2;
+                    document.getElementById('bluntresist').value = parseInt(document.getElementById('bluntresist').value) + 2;
+                }
+    
+                if(document.getElementById(elemento).value=="Thor Crystal"){
+                    document.getElementById('elecboost').value = parseInt(document.getElementById('elecboost').value) + 2;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('str').value = parseInt(document.getElementById('str').value) + 3;
+                        document.getElementById('vit').value = parseInt(document.getElementById('vit').value) + 1;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Horus Crystal"){
+                
+                }
+    
+                if(document.getElementById(elemento).value=="Baal Crystal"){
+                    document.getElementById('partyluc').value = parseInt(document.getElementById('partyluc').value) + 3;
+                    document.getElementById('clsrngdmgreceived').value = parseInt(document.getElementById('clsrngdmgreceived').value) + 5;
+                    document.getElementById('lngrngdmgreceived').value = parseInt(document.getElementById('lngrngdmgreceived').value) + 5;
+                    document.getElementById('spelldmgreceived').value = parseInt(document.getElementById('spelldmgreceived').value) + 5;
+                }
+    
+                if(document.getElementById(elemento).value=="Vishnu Crystal"){
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 5;
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 5;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('elecboost').value = parseInt(document.getElementById('elecboost').value) + 3;
+                    }
+                }
+}
     
 function calcularSoulStone(elemento){
     if(document.getElementById(elemento).value=="Luvah Crystal"){
