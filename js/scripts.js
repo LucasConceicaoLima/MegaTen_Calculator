@@ -117,6 +117,7 @@ var attackBoost = 0;
 var rushBoost = 0;
 var spinBoost = 0;
 var shotBoost = 0;
+var rapidBoost = 0;
 var bindBoost = 0;
 var muddleBoost = 0;
 var charmBoost = 0;
@@ -392,6 +393,7 @@ function inicializar(){
     document.getElementById('rushboost').value = rushBoost;
     document.getElementById('spinboost').value = spinBoost;
     document.getElementById('shotboost').value = shotBoost;
+    document.getElementById('rapidboost').value = rapidBoost;
     document.getElementById('bindboost').value = bindBoost;
     document.getElementById('charmboost').value = charmBoost;
     document.getElementById('muddleboost').value = muddleBoost;
@@ -1172,6 +1174,76 @@ function calcularTarot(elemento){
                     if(document.getElementById('align').value == "Law"){
                         document.getElementById('elecboost').value = parseInt(document.getElementById('elecboost').value) + 3;
                     }
+                }
+    
+                if(document.getElementById(elemento).value=="Hathor Crystal"){
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Ameno-Uzume Crystal"){
+                    document.getElementById('fireresist').value = parseInt(document.getElementById('fireresist').value) + 2;
+                    document.getElementById('elecresist').value = document.getElementById('elecresist').value - 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Sarasvati Crystal"){
+                    document.getElementById('luc').value = parseInt(document.getElementById('luc').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Freya Crystal"){
+                    document.getElementById('fireresist').value = parseInt(document.getElementById('fireresist').value) + 1;
+                    document.getElementById('mindresist').value = parseInt(document.getElementById('mindresist').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Fortuna Crystal"){
+                    document.getElementById('luc').value = parseInt(document.getElementById('luc').value) + 4;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('macca').value = parseInt(document.getElementById('macca').value) + 2;
+                        document.getElementById('magnetite').value = parseInt(document.getElementById('magnetite').value) + 2;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Sati Crystal"){
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 2;
+                    document.getElementById('fireresist').value = parseInt(document.getElementById('fireresist').value) + 3;
+                    document.getElementById('iceresist').value = document.getElementById('iceresist').value - 2
+                }
+    
+                if(document.getElementById(elemento).value=="Scathach Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 1;
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 1;
+                    document.getElementById('elecresist').value = document.getElementById('elecresist').value - 5;
+                    if(document.getElementById('align').value == "Law"){
+                         document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 2;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Norn Crystal"){
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 3;
+                    document.getElementById('support').value = parseInt(document.getElementById('support').value) + 2;
+                }
+    
+                if(document.getElementById(elemento).value=="Pallas Athena Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 1;
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 1;
+                    document.getElementById('deathresist').value = document.getElementById('deathresist').value - 5;
+                    if(document.getElementById('align').value == "Law"){
+                         document.getElementById('str').value = parseInt(document.getElementById('str').value) + 2;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Anat Crystal"){
+                   if(document.getElementById('align').value == "Law"){
+                         document.getElementById('rapidboost').value = parseInt(document.getElementById('rapidboost').value) + 6;
+                    }
+                    if(document.getElementById('align').value == "Chaos"){
+                         document.getElementById('rushboost').value = parseInt(document.getElementById('rushboost').value) + 6;
+                    }
+                }
+                    
+                if(document.getElementById(elemento).value=="Lakshmi Crystal"){
+                    document.getElementById('str').value = document.getElementById('str').value  5;
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 3;
+                    document.getElementById('charmboost').value = parseInt(document.getElementById('charmboost').value) + 4;   
                 }
 }
     
