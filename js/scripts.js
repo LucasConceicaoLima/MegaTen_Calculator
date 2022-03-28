@@ -247,9 +247,24 @@ var coll = document.getElementsByClassName("collapsible");
 var i;
 var modificou = 0;
 var valorAntigo = ''
+var origem = ''
 
-const arrayTarots = [];
-const arraySoulStones = [];
+const mapTarots = new Map();
+mapTarots.set('head_tarot', '');
+mapTarots.set('face_tarot', '');
+mapTarots.set('top_tarot', '');
+mapTarots.set('bottom_tarot', '');
+mapTarots.set('shoes_tarot', '');
+mapTarots.set('hand_tarot', '');
+mapTarots.set('ring_tarot', '');
+mapTarots.set('earring_tarot', '');
+mapTarots.set('neck_tarot', '');
+mapTarots.set('talisman_tarot', '');
+mapTarots.set('extra_tarot', '');
+mapTarots.set('back_tarot', '');
+mapTarots.set('comp_tarot', '');
+mapTarots.set('weapon_tarot', '');
+
 
 function collapse(){
     for (i = 0; i < coll.length; i++) {
@@ -1662,5 +1677,30 @@ function selecionarAcaoTarot(elemento, valor){
         console.log("Fiz")
         modificou = 1;
         valorAntigo = valor;
+        origem = elemento;
+        console.log(valorAntigo);
+        console.log(origem);
+    }
+}
+
+function selecionarActionTarot(elemento, valor){
+    if(modificou == 0){ // se é o primeiro elemento a ser mudado
+        calcularTarot(elemento); //faz
+        modificou = 1; // muda a flag
+        mapTarots.set(elemento, valor); //salva no map qual parte mudou e qual o valor
+        console.log(mapTarots);
+    }
+    
+    if(modificou ==  1 && mapTarots.get(elemento) != ''){ //se algum já mudou e o user ta alterando um que já mudou
+        calcularTarotUndo(mapTarots.get(elemento)); //desfazer o que já tinha feito
+        calcularTarot(elemento); //faz o novo
+        mapTarots.set(elemento, valor); //salva no mapa da parte atual o novo valor
+        console.log(mapTarots);
+    }
+    
+    if(modificou == 1 && mapTarots.get(elemento) == ''){
+        calcularTarot(elemento); //faz o novo
+        mapTarots.set(elemento, valor); //salva no mapa da parte atual o novo valor
+        console.log(mapTarots);
     }
 }
