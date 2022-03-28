@@ -182,7 +182,7 @@ var bethelPoints = 0;
 var experience = 0;
 var expertise = 0;
 var macca = 0;
-var magnetite = 0,
+var magnetite = 0;
 var slashCap = 0;
 var chargeCap = 0;
 var bluntCap = 0;
@@ -245,6 +245,11 @@ var partyCloseRange = 0;
 var functionAux = 0;
 var coll = document.getElementsByClassName("collapsible");
 var i;
+var modificou = 0;
+var valorAntigo = ''
+
+const arrayTarots = [];
+const arraySoulStones = [];
 
 function collapse(){
     for (i = 0; i < coll.length; i++) {
@@ -1101,9 +1106,9 @@ function calcularTarot(elemento){
                 if(document.getElementById(elemento).value=="Albion Crystal"){
                     document.getElementById('maxhp').value = parseInt(document.getElementById('maxhp').value) + 5;
                     document.getElementById('hpregen').value = parseInt(document.getElementById('hpregen').value) + 5;
-                    document.getElementById('closerangedamage').value = document.getElementById('closerangedamage').value) - 3;
-                    document.getElementById('longrangedamage').value = document.getElementById('longrangedamage').value) - 3;
-                    document.getElementById('spelldamage').value = document.getElementById('spelldamage').value) - 3;
+                    document.getElementById('closerangedamage').value = document.getElementById('closerangedamage').value - 3;
+                    document.getElementById('longrangedamage').value = document.getElementById('longrangedamage').value - 3;
+                    document.getElementById('spelldamage').value = document.getElementById('spelldamage').value - 3;
                     if(document.getElementById('level').value<80){
                         document.getElementById('macca').value = parseInt(document.getElementById('macca').value) + 3;
                     }
@@ -1112,9 +1117,9 @@ function calcularTarot(elemento){
                 if(document.getElementById(elemento).value=="Alilat Crystal"){
                     document.getElementById('physicaldefense').value = parseInt(document.getElementById('physicaldefense').value) + 3;
                     document.getElementById('magicaldefense').value = parseInt(document.getElementById('magicaldefense').value) + 3;
-                    document.getElementById('closerangedamage').value = document.getElementById('closerangedamage').value) - 3;
-                    document.getElementById('longrangedamage').value = document.getElementById('longrangedamage').value) - 3;
-                    document.getElementById('spelldamage').value = document.getElementById('spelldamage').value) - 3;
+                    document.getElementById('closerangedamage').value = document.getElementById('closerangedamage').value - 3;
+                    document.getElementById('longrangedamage').value = document.getElementById('longrangedamage').value - 3;
+                    document.getElementById('spelldamage').value = document.getElementById('spelldamage').value - 3;
                     if(document.getElementById('level').value<80){
                         document.getElementById('magnetite').value = parseInt(document.getElementById('magnetite').value) + 3;
                     }
@@ -1241,10 +1246,25 @@ function calcularTarot(elemento){
                 }
                     
                 if(document.getElementById(elemento).value=="Lakshmi Crystal"){
-                    document.getElementById('str').value = document.getElementById('str').value  5;
+                    document.getElementById('str').value = document.getElementById('str').value - 5;
                     document.getElementById('int').value = parseInt(document.getElementById('int').value) + 3;
                     document.getElementById('charmboost').value = parseInt(document.getElementById('charmboost').value) + 4;   
                 }
+}
+
+function calcularTarotUndo(elemento){
+    if(elemento=="Fool"){ 
+        document.getElementById('maxhp').value = document.getElementById('maxhp').value - 3;
+        document.getElementById('maxmp').value = parseInt(document.getElementById('maxmp').value) + 1;
+    }
+    
+    if(elemento=="Magician"){
+        document.getElementById('mag').value = document.getElementById('mag').value - 1;
+        document.getElementById('str').value = parseInt(document.getElementById('str').value) + 2;
+        document.getElementById('vit').value = parseInt(document.getElementById('vit').value) + 2;
+    }
+    
+    console.log("Cheguei aqui")
 }
     
 function calcularSoulStone(elemento){
@@ -1626,5 +1646,21 @@ function selecionarDatalists(){
         const heads1 = document.getElementById(head_s1);
         heads1.setAttribute('list', 's1headfemale');
             //...
+    }
+}
+
+function selecionarAcaoTarot(elemento, valor){ 
+    if(modificou == 1){
+        console.log("Entrei no if")
+        calcularTarotUndo(valorAntigo); //desfaz cálculo com valor anterior
+        console.log("Desfiz")
+        calcularTarot(elemento); //faz o cálculo com valor atual
+        console.log("Fiz")
+    } else {
+        console.log("Entrei no else")
+        calcularTarot(elemento);
+        console.log("Fiz")
+        modificou = 1;
+        valorAntigo = valor;
     }
 }
