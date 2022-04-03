@@ -1265,6 +1265,59 @@ function calcularTarot(elemento){
                     document.getElementById('int').value = parseInt(document.getElementById('int').value) + 3;
                     document.getElementById('charmboost').value = parseInt(document.getElementById('charmboost').value) + 4;   
                 }
+    
+                if(document.getElementById(elemento).value=="Baphomet Crystal"){
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Tao Tie Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 2;
+                    document.getElementById('vit').value = parseInt(document.getElementById('vit').value) + 1;
+                    document.getElementById('int').value = document.getElementById('int').value - 1;
+                }
+                
+                if(document.getElementById(elemento).value=="Mishaguji-Sama Crystal"){
+                    document.getElementById('luc').value = parseInt(document.getElementById('luc').value) + 2;
+                    document.getElementById('vit').value = parseInt(document.getElementById('vit').value) + 2;
+                    if(document.getElementById('psychologyclass').value >= 1){
+                        document.getElementById('statuschange').value = parseInt(document.getElementById('statuschange').value) + 3; 
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Pazuzu Crystal"){
+                    document.getElementById('forceresist').value = parseInt(document.getElementById('forceresist').value) + 1;
+                    document.getElementById('spelldmg').value = parseInt(document.getElementById('spelldmg').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Mada Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 3;
+                    document.getElementById('critical').value = parseInt(document.getElementById('critical').value) + 10;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('clsrngdmgreceived').value = document.getElementById('clsrngdmgreceived').value - 1;
+                    }
+                }
+
+                if(document.getElementById(elemento).value=="Nyarlathotep Crystal"){
+                    document.getElementById('spelldmg').value = parseInt(document.getElementById('spelldmg').value) + 3;
+                    document.getElementById('fireresist').value = document.getElementById('fireresist').value - 5; 
+                }
+    
+                if(document.getElementById(elemento).value=="Samael Crystal"){
+                    document.getElementById('maxhp').value = document.getElementById('maxhp').value - 8;
+                    document.getElementById('partyluc').value = parseInt(document.getElementById('partyint').value) + 2;
+                }
+    
+                if(document.getElementById(elemento).value=="Seth Crystal"){
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 2;
+                        document.getElementById('clsrng').value = parseInt(document.getElementById('clsrng').value) + 3;
+                    }
+                    if(document.getElementById('align').value == "Chaos"){
+                        document.getElementById('str').value = parseInt(document.getElementById('str').value) + 2;
+                        document.getElementById('spell').value = parseInt(document.getElementById('spell').value) + 3;
+                    }
+                }
+                
 }
 
 function calcularTarotUndo(elemento){
@@ -1661,25 +1714,6 @@ function selecionarDatalists(){
         const heads1 = document.getElementById(head_s1);
         heads1.setAttribute('list', 's1headfemale');
             //...
-    }
-}
-
-function selecionarAcaoTarot(elemento, valor){ 
-    if(modificou == 1){
-        console.log("Entrei no if")
-        calcularTarotUndo(valorAntigo); //desfaz cálculo com valor anterior
-        console.log("Desfiz")
-        calcularTarot(elemento); //faz o cálculo com valor atual
-        console.log("Fiz")
-    } else {
-        console.log("Entrei no else")
-        calcularTarot(elemento);
-        console.log("Fiz")
-        modificou = 1;
-        valorAntigo = valor;
-        origem = elemento;
-        console.log(valorAntigo);
-        console.log(origem);
     }
 }
 
