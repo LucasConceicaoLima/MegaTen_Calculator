@@ -1317,7 +1317,41 @@ function calcularTarot(elemento){
                         document.getElementById('spell').value = parseInt(document.getElementById('spell').value) + 3;
                     }
                 }
-                
+    
+                if(document.getElementById(elemento).value=="Omoikane Crystal"){
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 1;
+                    document.getElementById('luc').value = parseInt(document.getElementById('luc').value) + 2;
+                    document.getElementById('mag').value = document.getElementById('mag').value - 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Tajikarao Crystal"){
+                }
+    
+                if(document.getElementById(elemento).value=="Take-Mikazuchi Crystal"){
+                    document.getElementById('elecresist').value = parseInt(document.getElementById('elecresist').value) + 1;
+                    document.getElementById('rushboost').value = parseInt(document.getElementById('rushboost').value) + 1;
+                }
+    
+                if(document.getElementById(elemento).value=="Tsukuyomi Crystal"){
+                    document.getElementById('spell').value = parseInt(document.getElementById('spell').value) + 2;
+                    document.getElementById('lngrng').value = parseInt(document.getElementById('lngrng').value) + 2;
+                }
+    
+                if(document.getElementById(elemento).value=="Amaterasu(Male) Crystal"){
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 4;
+                    document.getElementById('hpregenflat').value = parseInt(document.getElementById('hpregenflat').value) + 3;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('partymag').value = parseInt(document.getElementById('partymag').value) + 1;
+                    }
+                }
+    
+                if(document.getElementById(elemento).value=="Amaterasu(Female) Crystal"){
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 4;
+                    document.getElementById('mpregenflat').value = parseInt(document.getElementById('mpregenflat').value) + 3;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('partymag').value = parseInt(document.getElementById('partymag').value) + 1;
+                    }
+                }
 }
 
 function calcularTarotUndo(elemento){
