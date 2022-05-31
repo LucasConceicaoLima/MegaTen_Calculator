@@ -248,6 +248,8 @@ var modificou = 0;
 var valorAntigo = ''
 var origem = ''
 
+var url = window.location.href;
+
 const mapTarots = new Map();
 mapTarots.set('head_tarot', '');
 mapTarots.set('face_tarot', '');
@@ -516,6 +518,8 @@ function inicializar(){
     document.getElementById('partyluc').value = partyLuck;
     document.getElementById('partyxp').value = partyExperience;
     document.getElementById('partyclsrng').value = partyCloseRange;
+
+    document.getElementById('link').value = url;
 }
     
 function setarPersonagem(){
@@ -1755,4 +1759,17 @@ function selecionarActionTarot(elemento, valor){
         mapTarots.set(elemento, valor); //salva no mapa da parte atual o novo valor
         console.log(mapTarots);
     }
+}
+
+function gerarLink(){
+    url = url + '?';
+    var location, inputs, index;
+    location = document.getElementById('equipment');
+    inputs = location.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; index++) {
+        if(inputs[index].value!=''){
+            url = url + inputs[index].id + '=' + inputs[index].value + '&';
+        }
+    }
+    document.getElementById('link').value = url;
 }

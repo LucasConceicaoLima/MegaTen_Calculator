@@ -225,7 +225,7 @@
         </div>
         
         <div id="equipment">
-            <form action="index.php" method="post" autocomplete="off">
+            <form action="index.php" method="get" autocomplete="off">
                      
                     <label for="head_s1">Head</label>
                     <input type="text" name="head_s1" id="head_s1" list="s1headmale" placeholder="Slot 1">
@@ -1624,42 +1624,48 @@
 
             <details>
                 <summary>Demon General Damage</summary>
-                        <input type="text" id="demoncdr" name="demoncdr" readonly><label for="demoncdr">Demon Cooldown Reduction</label>
-                        <input type="text" id="demongnrdmg" name="demongnrdmg" readonly><label for="demongnrdmg">Demon General Damage</label>
-                        <input type="text" id="demongnrdmgred" name="demongnrdmgred" readonly><label for="demongnrdmgred">Demon General Damage Reduction</label>
-                        <input type="text" id="demonlbchance" name="demonlbchance" readonly><label for="demonlbchance">Demon Limit Break Chance</label>
-                        <input type="text" id="demonlbpower" name="demonlbpower" readonly><label for="demonlbpower">Demon Limit Break Power</label>
-                        <input type="text" id="demontachance" name="demontachance" readonly><label for="demontachance">Demon Technical Attack Chance</label>
-                        <input type="text" id="demontapower" name="demontapower" readonly><label for="demontachance">Demon Technical Attack Power</label>
-                        <input type="text" id="demonpursuitchance" name="demonpursuitchance" readonly><label for="demonpursuitchance">Demon Pursuit Chance</label>
-                        <input type="text" id="demonpursuitpower" name="demonpursuitpower" readonly><label for="demonpursuitpower">Demon Pursuit Power</label>
-                        <input type="text" id="demoncritical" name="demoncritical" readonly><label for="demoncritical">Demon Critical</label>
-                        <input type="text" id="demonfcc" name="demonfcc" readonly><label for="demonfcc">Demon Final Critical Correction</label>
-                        <input type="text" id="demonrush" name="demonrush" readonly><label for="demonrush">Demon Rush</label>
-                        <input type="text" id="demonspin" name="demonspin" readonly><label for="demonspin">Demon Spin</label>
-                        <input type="text" id="demonrapid" name="demonrapid" readonly><label for="demonrapid">Demon Rapid</label>
-                        <input type="text" id="demonfireboost" name="demonfireboost" readonly><label for="demonfireboost">Demon Fire Boost</label>
-                        <input type="text" id="demoniceboost" name="demoniceboost" readonly><label for="demoniceboost">Demon Ice Boost</label>
-                        <input type="text" id="demonelecboost" name="demonelecboost" readonly><label for="demonelecboost">Demon Elec Boost</label>
-                        <input type="text" id="demonforceboost" name="demonforceboost" readonly><label for="demonforceboost">Demon Force Boost</label>
-                        <input type="text" id="demonspinhpcost" name="demonspinhpcost" readonly><label for="demonspinhpcost">Demon Spin HP Cost</label>
-                        <input type="text" id="demonspinmpcost" name="demonspinmpcost" readonly><label for="demonspinmpcost">Demon Spin MP Cost</label>
-                        <input type="text" id="demonexperience" name="demonexperience" readonly><label for="demonexperience">Demon Experience</label>
+                    <input type="text" id="demoncdr" name="demoncdr" readonly><label for="demoncdr">Demon Cooldown Reduction</label>
+                    <input type="text" id="demongnrdmg" name="demongnrdmg" readonly><label for="demongnrdmg">Demon General Damage</label>
+                    <input type="text" id="demongnrdmgred" name="demongnrdmgred" readonly><label for="demongnrdmgred">Demon General Damage Reduction</label>
+                    <input type="text" id="demonlbchance" name="demonlbchance" readonly><label for="demonlbchance">Demon Limit Break Chance</label>
+                    <input type="text" id="demonlbpower" name="demonlbpower" readonly><label for="demonlbpower">Demon Limit Break Power</label>
+                    <input type="text" id="demontachance" name="demontachance" readonly><label for="demontachance">Demon Technical Attack Chance</label>
+                    <input type="text" id="demontapower" name="demontapower" readonly><label for="demontachance">Demon Technical Attack Power</label>
+                    <input type="text" id="demonpursuitchance" name="demonpursuitchance" readonly><label for="demonpursuitchance">Demon Pursuit Chance</label>
+                    <input type="text" id="demonpursuitpower" name="demonpursuitpower" readonly><label for="demonpursuitpower">Demon Pursuit Power</label>
+                    <input type="text" id="demoncritical" name="demoncritical" readonly><label for="demoncritical">Demon Critical</label>
+                    <input type="text" id="demonfcc" name="demonfcc" readonly><label for="demonfcc">Demon Final Critical Correction</label>
+                    <input type="text" id="demonrush" name="demonrush" readonly><label for="demonrush">Demon Rush</label>
+                    <input type="text" id="demonspin" name="demonspin" readonly><label for="demonspin">Demon Spin</label>
+                    <input type="text" id="demonrapid" name="demonrapid" readonly><label for="demonrapid">Demon Rapid</label>
+                    <input type="text" id="demonfireboost" name="demonfireboost" readonly><label for="demonfireboost">Demon Fire Boost</label>
+                    <input type="text" id="demoniceboost" name="demoniceboost" readonly><label for="demoniceboost">Demon Ice Boost</label>
+                    <input type="text" id="demonelecboost" name="demonelecboost" readonly><label for="demonelecboost">Demon Elec Boost</label>
+                    <input type="text" id="demonforceboost" name="demonforceboost" readonly><label for="demonforceboost">Demon Force Boost</label>
+                    <input type="text" id="demonspinhpcost" name="demonspinhpcost" readonly><label for="demonspinhpcost">Demon Spin HP Cost</label>
+                    <input type="text" id="demonspinmpcost" name="demonspinmpcost" readonly><label for="demonspinmpcost">Demon Spin MP Cost</label>
+                    <input type="text" id="demonexperience" name="demonexperience" readonly><label for="demonexperience">Demon Experience</label>
             </details>
 
             <hr>
             
             <details>
                 <summary>Party Stats</summmary>
-                        <input type="text" id="partystr" name="partystr" readonly><label for="partystr">Party Strength</label>
-                        <input type="text" id="partymag" name="partymag" readonly><label for="partymag">Party Magic</label>
-                        <input type="text" id="partyvit" name="partyvit" readonly><label for="partyvit">Party Vitality</label>
-                        <input type="text" id="partyint" name="partyint" readonly><label for="partyint">Party Intelligence</label>
-                        <input type="text" id="partyspd" name="partyspd" readonly><label for="partyspd">Party Speed</label>
-                        <input type="text" id="partyluc" name="partyluc" readonly><label for="partyluc">Party Luck</label>
-                        <input type="text" id="partyclsrng" name="partyclsrng" readonly><label for="partyclsrng">Party Close Range</label>
-                        <input type="text" id="partyxp" name="partyxp" readonly><label for="partyxp">Party Experience</label>
+                    <input type="text" id="partystr" name="partystr" readonly><label for="partystr">Party Strength</label>
+                    <input type="text" id="partymag" name="partymag" readonly><label for="partymag">Party Magic</label>
+                    <input type="text" id="partyvit" name="partyvit" readonly><label for="partyvit">Party Vitality</label>
+                    <input type="text" id="partyint" name="partyint" readonly><label for="partyint">Party Intelligence</label>
+                    <input type="text" id="partyspd" name="partyspd" readonly><label for="partyspd">Party Speed</label>
+                    <input type="text" id="partyluc" name="partyluc" readonly><label for="partyluc">Party Luck</label>
+                    <input type="text" id="partyclsrng" name="partyclsrng" readonly><label for="partyclsrng">Party Close Range</label>
+                    <input type="text" id="partyxp" name="partyxp" readonly><label for="partyxp">Party Experience</label>
             </details>
+
         </div> 
+
+        <div id="share">
+            <input type="text" name="link" id="link">
+            <input type="button" name="generate" id="generate" value="Generate link!" onclick="gerarLink()">
+        </div>
     </body>
 </html>

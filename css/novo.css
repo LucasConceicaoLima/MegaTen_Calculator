@@ -131,10 +131,12 @@ form input{
     margin-top: 10px;
     text-align: right;
     width: 100px;
+    clear: both;
 }
 
 #equipment input{
-    width: 200px;
+    display: inline-block;
+    width: 250px;
     margin: 10px;
 }
 
@@ -164,12 +166,12 @@ form input{
     float: left;
 }
 
-#demon_stats{
+#demon_stats, #party_stats{
     float: right;
     width: 49.5%;
 }
 
-#demon_stats label{
+#demon_stats label, #party_stats label{
     margin: 5px;
     width: 35%;
     float: right;
@@ -179,7 +181,7 @@ form input{
     
 }
 
-#demon_stats input{
+#demon_stats input, #party_stats input{
     width: 5%;
     margin: 5px;
     display: block;
@@ -190,39 +192,13 @@ form input{
     clear: left;
 }
 
-#demon_stats hr{
+#demon_stats hr, #party_stats hr{
     clear: both;
 }
 
-.content {
-    max-height: 1px;
-    overflow: hidden;
-    transition: all .3s ease;
-}
-
-.content.expand {
-    max-height: 250px;
-}
-
-.collapsible{
-    background: #C8C8C8;
-    font-size: 18px;
-    font-family: inherit;
-    cursor: pointer;
-    padding: 18px;
+#share input{
+    display: block;
     width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-}
-
-.collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    color: white;
-    float: right;
-    margin-left: 5px;
-}
-
-.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    margin: 5px;
+    padding: 5px;
 }
