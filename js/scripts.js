@@ -56,7 +56,8 @@ var magicConditionsExpertise = 0;
 var swordsmithExpertise = 0;
 var armsMakerExpertise = 0;
 var craftsmanshipExpertise = 0;
-    
+
+
 var strength = 0;
 var magic = 0;
 var vitality = 0;
@@ -124,7 +125,9 @@ var charmBoost = 0;
 var stoneBoost = 0;
 var poisonBoost = 0;
 var paralyzeBoost = 0;
+var stunBoost = 0;
 var damageBoostRaceElemental = 0;
+var damageBoostRaceEvilDragon = 0;
 var defBoostRaceEvilSpirit = 0;
 var defBoostRaceEvilDemon = 0;
 var defBoostRaceFoul = 0;
@@ -196,6 +199,8 @@ var forceCap = 0;
 var mindCap = 0;
 var nerveCap = 0;
 var almightyCap = 0;
+
+
 var demonStrength = 0;
 var demonMagic = 0;
 var demonSpeed = 0;
@@ -230,6 +235,7 @@ var demonFireBoost = 0;
 var demonIceBoost = 0;
 var demonElecBoost = 0;
 var demonForceBoost = 0;
+var demonCuraBoost = 0;
 var demonSpinHPCost = 0;
 var demonSpinMPCost = 0;
 var demonExperience = 0;
@@ -408,6 +414,7 @@ function inicializar(){
     document.getElementById('paralyzeboost').value = paralyzeBoost;
     
     document.getElementById('racedmgelemental').value = damageBoostRaceElemental;
+    document.getElementById('racedmgevildragon').value = damageBoostRaceEvilDragon;
     document.getElementById('racedefevilspirit').value = defBoostRaceEvilSpirit;
     document.getElementById('racedefevildemon').value = defBoostRaceEvilDemon;
     document.getElementById('racedeffoul').value = defBoostRaceFoul;
@@ -507,6 +514,7 @@ function inicializar(){
     document.getElementById('demoniceboost').value = demonIceBoost;
     document.getElementById('demonelecboost').value = demonElecBoost;
     document.getElementById('demonforceboost').value = demonForceBoost;
+    document.getElementById('demoncuraboost').value = demonCuraBoost;
     document.getElementById('demonspinhpcost').value = demonSpinHPCost;
     document.getElementById('demonspinmpcost').value = demonSpinMPCost;
     
@@ -736,7 +744,7 @@ function calcularTarot(elemento){
                 }
     
                 if(document.getElementById(elemento).value=="I of Cups"){
-                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 1;
+                    document.getElementById('spd').value = parseInt(document.getElementById('spd').value) + 1;
                 }
                 
                 if(document.getElementById(elemento).value=="II of Cups"){
@@ -1338,6 +1346,48 @@ function calcularTarot(elemento){
                     document.getElementById('mpregenflat').value = parseInt(document.getElementById('mpregenflat').value) + 3;
                     if(document.getElementById('align').value == "Law"){
                         document.getElementById('partymag').value = parseInt(document.getElementById('partymag').value) + 1;
+                    }
+                }
+
+                if(document.getElementById(elemento).value=="Apsaras Crystal"){
+                    document.getElementById('maxmp').value = parseInt(document.getElementById('maxmp').value) + 2;
+                }
+
+
+                if(document.getElementById(elemento).value=="Isora Crystal"){
+                    document.getElementById('elecboost').value = parseInt(document.getElementById('elecboost').value) + 2;
+                }
+
+                if(document.getElementById(elemento).value=="Dis Crystal"){
+                    document.getElementById('maxmp').value = parseInt(document.getElementById('maxmp').value) + 3;
+                }
+
+                if(document.getElementById(elemento).value=="Kinnari Crystal"){
+                    document.getElementById('demoncuraboost').value = parseInt(document.getElementById('demoncuraboost').value) + 5;
+                }
+
+                if(document.getElementById(elemento).value=="Onkot Crystal"){
+                    document.getElementById('stunboost').value = parseInt(document.getElementById('stunboost').value) + 5;
+                }
+
+                if(document.getElementById(elemento).value=="Efreet Crystal"){
+                    document.getElementById('experience').value = document.getElementById('experience').value - 3;
+                    document.getElementById('expertise').value = parseInt(document.getElementById('expertise').value) + 6;
+                }
+
+                if(document.getElementById(elemento).value=="Jinn Crystal"){
+                    document.getElementById('macca').value = parseInt(document.getElementById('macca').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Purski Crystal"){
+                    document.getElementById('dmgboostevildragon').value = parseInt(document.getElementById('dmgboostevildragon').value) + 3;
+                }
+
+                if(document.getElementById(elemento).value=="Ganesha Crystal"){
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 1;
+                    document.getElementById('luc').value = parseInt(document.getElementById('luc').value) + 1;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('macca').value = parseInt(document.getElementById('macca').value) + 1;
                     }
                 }
 }

@@ -168,7 +168,8 @@ form input{
 
 #demon_stats, #party_stats{
     float: right;
-    width: 49.5%;
+    width: 48.5%;
+    margin-right: 10px;
 }
 
 #demon_stats label, #party_stats label{
@@ -189,7 +190,7 @@ form input{
 }
 
 #char_stats hr{
-    clear: left;
+    clear: both;
 }
 
 #demon_stats hr, #party_stats hr{
