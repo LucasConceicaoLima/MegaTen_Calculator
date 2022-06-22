@@ -236,6 +236,8 @@ var demonIceBoost = 0;
 var demonElecBoost = 0;
 var demonForceBoost = 0;
 var demonCuraBoost = 0;
+var demonalmightyboost = 0;
+
 var demonSpinHPCost = 0;
 var demonSpinMPCost = 0;
 var demonExperience = 0;
@@ -515,6 +517,7 @@ function inicializar(){
     document.getElementById('demonelecboost').value = demonElecBoost;
     document.getElementById('demonforceboost').value = demonForceBoost;
     document.getElementById('demoncuraboost').value = demonCuraBoost;
+    document.getElementById('demonalmightyboost').value = demonalmightyboost;
     document.getElementById('demonspinhpcost').value = demonSpinHPCost;
     document.getElementById('demonspinmpcost').value = demonSpinMPCost;
     
@@ -1390,6 +1393,44 @@ function calcularTarot(elemento){
                         document.getElementById('macca').value = parseInt(document.getElementById('macca').value) + 1;
                     }
                 }
+
+                if(document.getElementById(elemento).value=="Uriel Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 1;
+                    document.getElementById('fireresist').value = parseInt(document.getElementById('fireresist').value) + 3;
+                    document.getElementById('fireresist').value = document.getElementById('fireresist').value - 2;
+                }
+
+                if(document.getElementById(elemento).value=="Rafael Crystal"){
+                    document.getElementById('critical').value = parseInt(document.getElementById('critical').value) + 5;
+                    document.getElementById('criticaldef').value = parseInt(document.getElementById('criticaldef').value) + 5;
+                }
+
+                if(document.getElementById(elemento).value=="Gabriel Crystal"){
+                    document.getElementById('demonelecboost').value = parseInt(document.getElementById('demonelecboost').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Michael Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 2;
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 2;
+                    document.getElementById('spd').value = parseInt(document.getElementById('spd').value) + 2;
+                    document.getElementById('cdr').value = document.getElementById('cdr').value - 1;
+                }
+
+                if(document.getElementById(elemento).value=="Seraph Crystal"){
+                    document.getElementById('almightyboost').value = parseInt(document.getElementById('almightyboost').value) + 2;
+                    document.getElementById('demonalmightyboost').value = parseInt(document.getElementById('demonalmightyboost').value) + 2;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('fireboost').value = parseInt(document.getElementById('fireboost').value) + 3;
+                        document.getElementById('demonfireboost').value = parseInt(document.getElementById('demonfireboost').value) + 3;
+                    }
+                }
+                
+                if(document.getElementById(elemento).value=="Metatron Crystal"){
+                    document.getElementById('str').value = parseInt(document.getElementById('str').value) + 1;
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 1;
+                    document.getElementById('expelboost').value = parseInt(document.getElementById('expelboost').value) + 5;
+                }
+
 }
 
 function calcularTarotUndo(elemento){
