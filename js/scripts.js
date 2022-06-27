@@ -1487,6 +1487,37 @@ function calcularTarot(elemento){
                     }
                 }
 
+                if(document.getElementById(elemento).value=="Feng Huang Crystal"){
+                    document.getElementById('vit').value = parseInt(document.getElementById('vit').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Jatayu Crystal"){
+                    document.getElementById('spd').value = parseInt(document.getElementById('spd').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Phoenix Crystal"){
+                    document.getElementById('maxhp').value = parseInt(document.getElementById('maxhp').value) + 5;
+                    document.getElementById('maxmp').value = parseInt(document.getElementById('maxmp').value) + 5;
+                }
+
+                if(document.getElementById(elemento).value=="Suparna Crystal"){
+                    document.getElementById('hpregen').value = parseInt(document.getElementById('hpregen').value) + 2;
+                    document.getElementById('mpregen').value = parseInt(document.getElementById('mpregen').value) + 3;
+                }
+
+                if(document.getElementById(elemento).value=="Zhu Que Crystal"){
+                    
+                }
+
+                if(document.getElementById(elemento).value=="Yatagarasu Crystal"){
+                    document.getElementById('forceresist').value = parseInt(document.getElementById('forceresist').value) + 1;
+                    document.getElementById('nerveresist').value = parseInt(document.getElementById('nerveresist').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Garuda Crystal"){
+                    document.getElementById('mysticresist').value = parseInt(document.getElementById('mysticresist').value) + 5;
+                    document.getElementById('nerveresist').value = parseInt(document.getElementById('nerveresist').value) + 5;
+                }
 }
 
 function calcularTarotUndo(elemento){
