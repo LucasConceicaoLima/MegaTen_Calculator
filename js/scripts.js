@@ -128,6 +128,7 @@ var paralyzeBoost = 0;
 var stunBoost = 0;
 var damageBoostRaceElemental = 0;
 var damageBoostRaceEvilDragon = 0;
+var damageBoostRaceFoul = 0;
 var defBoostRaceEvilSpirit = 0;
 var defBoostRaceEvilDemon = 0;
 var defBoostRaceFoul = 0;
@@ -417,6 +418,7 @@ function inicializar(){
     
     document.getElementById('racedmgelemental').value = damageBoostRaceElemental;
     document.getElementById('racedmgevildragon').value = damageBoostRaceEvilDragon;
+    document.getElementById('racedmgfoul').value = damageBoostRaceFoul;
     document.getElementById('racedefevilspirit').value = defBoostRaceEvilSpirit;
     document.getElementById('racedefevildemon').value = defBoostRaceEvilDemon;
     document.getElementById('racedeffoul').value = defBoostRaceFoul;
@@ -1429,6 +1431,60 @@ function calcularTarot(elemento){
                     document.getElementById('str').value = parseInt(document.getElementById('str').value) + 1;
                     document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 1;
                     document.getElementById('expelboost').value = parseInt(document.getElementById('expelboost').value) + 5;
+                }
+
+                if(document.getElementById(elemento).value=="Angel Crystal"){
+                    document.getElementById('expelresist').value = parseInt(document.getElementById('expelresist').value) + 1;
+                    document.getElementById('deathresist').value = document.getElementById('deathresist').value - 1;
+                }
+
+                if(document.getElementById(elemento).value=="Archangel Crystal"){
+                    document.getElementById('slashboost').value = parseInt(document.getElementById('slashboost').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Principality Crystal"){
+                    document.getElementById('expelresist').value = parseInt(document.getElementById('expelresist').value) + 2;
+                    document.getElementById('deathresist').value = document.getElementById('deathresist').value - 1;
+                }
+
+                if(document.getElementById(elemento).value=="Power Crystal"){
+                    document.getElementById('racedmgfoul').value = parseInt(document.getElementById('racedmgfoul').value) + 1;
+                }
+
+                if(document.getElementById(elemento).value=="Virtue Crystal"){
+
+                }
+
+                if(document.getElementById(elemento).value=="Dominion Crystal"){
+                    document.getElementById('int').value = parseInt(document.getElementById('int').value) + 3;
+                    document.getElementById('vit').value = document.getElementById('vit').value - 5;
+                    document.getElementById('luc').value = document.getElementById('luc').value - 2;
+                }
+
+                if(document.getElementById(elemento).value=="Throne Crystal"){
+                    document.getElementById('mag').value = parseInt(document.getElementById('mag').value) + 3;
+                    document.getElementById('str').value = document.getElementById('str').value - 3;
+                    document.getElementById('luc').value = document.getElementById('luc').value - 3;
+                }
+
+                if(document.getElementById(elemento).value=="Ose Hallel Crystal"){
+                    document.getElementById('clsrngdmg').value = parseInt(document.getElementById('clsrngdmg').value) + 6;
+                    if(document.getElementById('blessclass').value>=9){
+                        document.getElementById('clsrng').value = parseInt(document.getElementById('clsrng').value) + 4;
+                        document.getElementById('lngrng').value = parseInt(document.getElementById('lngrng').value) + 4;
+                        document.getElementById('spell').value = parseInt(document.getElementById('spell').value) + 4;
+                    }
+                }
+
+                if(document.getElementById(elemento).value=="Flauros Hallel Crystal"){
+                    document.getElementById('clsrngdmg').value = parseInt(document.getElementById('clsrngdmg').value) + 2;
+                    if(document.getElementById('align').value == "Law"){
+                        document.getElementById('str').value = parseInt(document.getElementById('str').value) + 4;
+                    }
+                    if(document.getElementById('blessclass').value>=9){
+                        document.getElementById('tachance').value = parseInt(document.getElementById('tachance').value) + 1;
+                        document.getElementById('tapower').value = parseInt(document.getElementById('tapower').value) + 1;
+                    }
                 }
 
 }
